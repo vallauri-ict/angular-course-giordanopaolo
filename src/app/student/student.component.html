@@ -1,1 +1,4 @@
-<p>student works!</p>
+<!-- Ogni volta che richiamo app-student lui crea un' istanza diversa-->
+<h4 [ngStyle]="{backgroundColor : student.gender=='F' ? 'pink' : 'cyan'}">
+    {{ student.name }} - {{ student.hobby }}
+</h4>

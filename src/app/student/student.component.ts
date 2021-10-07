@@ -7,7 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentComponent implements OnInit {
 
-  constructor() { }
+  studentList = [
+    { name: "Jolyne Kujo", hobby: "Non soccorrere i feriti della strada", gender: "F" },
+    { name: "Jotaro Kujo", hobby: "Poker", gender: "M" },
+    { name: "Joseph Joestar", hobby: "Concentrarsi", gender: "M" },
+    { name: "Foo Fighter", hobby: "Collezionare dischi", gender: "F" },
+    { name: "Bruno Bucciarati", hobby: "Aiutare il prossimo", gender: "M" },
+    { name: "Giorno Giovanna", hobby: "Giardinaggio", gender: "M" },
+    { name: "Higashikata Josuke", hobby: "Pettinarsi", gender: "M" },
+    { name: "Jhonatan Joestar", hobby: "Aiutare il prossimo", gender: "F" },
+    { name: "Jhonatan Joestar", hobby: "Aiutare il prossimo", gender: "F" }
+
+  ]
+
+  student: any;
+  constructor() {
+    let num = Math.floor(Math.random() * this.studentList.length);
+    this.student = this.studentList[num];
+  }
 
   ngOnInit(): void {
   }
