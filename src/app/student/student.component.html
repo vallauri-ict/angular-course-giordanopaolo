@@ -1,4 +1,10 @@
 <!-- Ogni volta che richiamo app-student lui crea un' istanza diversa-->
-<h4 [ngStyle]="{backgroundColor : student.gender=='F' ? 'pink' : 'cyan'}">
+<!-- <h4 [ngStyle]="{backgroundColor : student.gender=='F' ? 'pink' : 'cyan'}">
     {{ student.name }} - {{ student.hobby }}
-</h4>
+</h4> -->
+<p [ngClass]="{ 'female': student.gender =='F',
+                'male': student.gender =='M',
+                'underlined': student.hobby =='Poker'}"
+    (click)="onStudentClick()">
+    {{ student.name }} - {{ student.hobby }}
+</p>

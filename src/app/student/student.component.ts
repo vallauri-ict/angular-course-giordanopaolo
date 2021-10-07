@@ -15,18 +15,22 @@ export class StudentComponent implements OnInit {
     { name: "Bruno Bucciarati", hobby: "Aiutare il prossimo", gender: "M" },
     { name: "Giorno Giovanna", hobby: "Giardinaggio", gender: "M" },
     { name: "Higashikata Josuke", hobby: "Pettinarsi", gender: "M" },
-    { name: "Jhonatan Joestar", hobby: "Aiutare il prossimo", gender: "F" },
     { name: "Jhonatan Joestar", hobby: "Aiutare il prossimo", gender: "F" }
-
   ]
 
   student: any;
   constructor() {
-    let num = Math.floor(Math.random() * this.studentList.length);
-    this.student = this.studentList[num];
+    this.student = this.studentList[this.randomStudent()];
+  }
+
+  private randomStudent(){
+    return Math.floor(Math.random() * this.studentList.length);
   }
 
   ngOnInit(): void {
   }
 
+  onStudentClick(){
+    this.student = this.studentList[this.randomStudent()];
+  }
 }
