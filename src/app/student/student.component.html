@@ -5,6 +5,11 @@
 <p [ngClass]="{ 'female': student.gender =='F',
                 'male': student.gender =='M',
                 'underlined': student.hobby =='Poker'}"
-    (click)="onStudentClick()">
-    {{ student.name }} - {{ student.hobby }}
+                (click)="onStudentClick()">
+    <!-- Binding unidirezionale :-->           
+    
+    <span *ngIf="student.isPro; else noJojo">Jojo:</span> {{ student.name }} - {{ student.hobby }}
+    <ng-template #noJojo>
+        <span>Jobro:</span>
+    </ng-template>
 </p>
