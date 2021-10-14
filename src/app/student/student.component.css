@@ -9,3 +9,9 @@
 .underlined{
     text-decoration: underline;
 }
+.out{
+    padding: 6px;
+    min-width: 400px;
+    display: inline-block;
+    text-align: left;
+}

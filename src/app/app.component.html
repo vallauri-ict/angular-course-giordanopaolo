@@ -31,9 +31,15 @@
   
   <h2>The Studets: </h2>
   <!-- lui instanzia un app-student tutte le volte quindi essendo istanze diverse carica 3 valori diversi  -->
+  <!-- <app-student></app-student>
   <app-student></app-student>
-  <app-student></app-student>
-  <app-student></app-student>
+  <app-student></app-student> -->
+  
+  <h4 *ngFor="let student of studentList; let i = index">
+    <span>{{i + 1}}) </span>
+    <app-student [student]="student">
+    </app-student>
+  </h4>
 
   <svg id="clouds" xmlns="http://www.w3.org/2000/svg" width="2611.084" height="485.677" viewBox="0 0 2611.084 485.677">
     <title>Gray Clouds Background</title>
