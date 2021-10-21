@@ -6,7 +6,17 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-
+button{
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    color: white;
+    background-color: blue;
+}
+button:disabled{
+    color: black;
+    background-color: darkcyan;
+}
 h1, h2, h3, h4, h5, h6 {
     margin: 8px 0;
 }
