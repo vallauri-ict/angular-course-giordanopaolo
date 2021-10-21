@@ -1,5 +1,6 @@
 import { elementEventFullName } from '@angular/compiler/src/view_compiler/view_compiler';
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { StudentComponent } from './student/student.component';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,9 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 export class AppComponent {
   title = 'Course Giordano Paolo,';
 
-  studentList = [
+  constructor(){
+  }
+  studentRepository = [
     { name: "Jolyne Kujo", hobby: "Wire", gender: "F", isPro: false },
     { name: "Jotaro Kujo", hobby: "Poker", gender: "M", isPro: true },
     { name: "Joseph Joestar", hobby: "Football", gender: "M", isPro: false },
@@ -20,7 +23,7 @@ export class AppComponent {
     { name: "Jhonatan Joestar", hobby: "Basket", gender: "M", isPro: false }
   ]
   @ViewChild("txtName") txtName !: ElementRef;
-  
+  studentList: any=[];
   studentGender: string="F";
   studentName: string = "";
   studentHobbys:string="";
