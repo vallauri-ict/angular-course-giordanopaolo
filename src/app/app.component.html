@@ -41,7 +41,7 @@
     <span>{{i + 1}}) </span>
     <app-student [student]="student">
     </app-student>
-  <button id="delete">Delete</button>
+  <button id="delete" (studentDeleteEvent)="studentDeleteEvent($event)">Delete</button>
   </h4>
   <h4>Add student</h4>
   <label for="txtName"> student name: </label>

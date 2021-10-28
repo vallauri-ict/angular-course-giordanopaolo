@@ -1,5 +1,6 @@
 import { elementEventFullName } from '@angular/compiler/src/view_compiler/view_compiler';
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import * as internal from 'stream';
 import { StudentComponent } from './student/student.component';
 
 @Component({
@@ -30,9 +31,17 @@ export class AppComponent {
 
   hobbies =["Poker", "volley", "dormire", "basket"]
   onCreateStudent() {
-    let newStudent = { name: this.studentName, hobby: this.studentHobbys, gender: this.studentGender, isPro: false }
+    let newStudent : any = { name: this.studentName, hobby: this.studentHobbys, gender: this.studentGender, isPro: false }
     this.studentList.push(newStudent);
     this.studentName = "";
+    newStudent.index = this.studentList.length;
     this.txtName.nativeElement.focus();
+  }
+  onDeleteStudent(index : any){
+    this.studentList.splice(index, 1)
+  }
+  studentDeleteEvent(student:any){
+    this.studentList.splice(this.studentList.indexOf(student), 1)
+    alert("Da cancellare:" + student.name)
   }
 }
