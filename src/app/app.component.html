@@ -37,10 +37,11 @@
   
 
 
-  <h4 *ngFor="let student of studentList; let i = index">
+  <h4 *ngFor="let student of studentRepository; let i = index">
     <span>{{i + 1}}) </span>
     <app-student [student]="student">
     </app-student>
+  <button id="delete">Delete</button>
   </h4>
   <h4>Add student</h4>
   <label for="txtName"> student name: </label>
@@ -55,7 +56,7 @@
     <input type="radio" id="male" value="M" name="gender" [(ngModel)]="studentGender">
     <label for="male"> Male</label>
   </div>
-  <select [(ngModel)]="studentHobbyes">
+  <select [(ngModel)]="studentHobbys">
     <option *ngFor="let hobby of hobbies;" [value]="hobby">{{hobby}} </option>
   </select>
   
