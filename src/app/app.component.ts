@@ -1,6 +1,5 @@
 import { elementEventFullName } from '@angular/compiler/src/view_compiler/view_compiler';
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import * as internal from 'stream';
 import { StudentComponent } from './student/student.component';
 
 @Component({
